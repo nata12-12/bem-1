@@ -1,0 +1,14 @@
+{
+  "author": "nnn",
+  "name": "bem-1",
+  "email": "nata_home12_12@mail.ru",
+  "version": "0.0.0",
+  "ignore": [
+    ".enb/tmp",
+    "node_modules",
+    "libs"
+  ],
+  "dependencies": {
+    "bem-components": "v2.3.0"
+  }
+}
