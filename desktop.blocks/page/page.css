@@ -1,0 +1,13 @@
+.page{
+    margin: 0; padding: 0;
+	background: white;
+	font: 13px  Arial, Helvetica, sans-serif;
+	color: black;
+}
+ 
+.page__main{
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 0;
+}

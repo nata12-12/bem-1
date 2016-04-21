@@ -1,0 +1,19 @@
+.layout
+{
+    min-height: 100px;
+	font: 13px  Arial;
+}
+ 
+.layout__left
+{
+    padding-right: 200px;
+	font: 13px  Arial;
+	background: red;
+}
+ 
+.layout__right
+{
+    
+ 
+    width: 150px;
+}
