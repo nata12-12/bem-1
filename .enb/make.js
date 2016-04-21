@@ -1,5 +1,5 @@
 var enbBemTechs = require('enb-bem-techs'),
-    borschikTech = require('enb-borschik/techs/borschik'); 
+    borschikTech = require('enb-borschik/techs/borschik');
 
 module.exports = function (config) {
     var isProd = process.env.YENV === 'production';
@@ -76,14 +76,14 @@ module.exports = function (config) {
             // html
             [require('enb-bemxjst/techs/bemjson-to-html')],
             // borschik
-            [borschikTech, { sourceTarget: '?.css', destTarget: '?.min.css', tech: 'cleancss', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.ie.css', destTarget: '?.min.ie.css', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.ie8.css', destTarget: '?.min.ie8.css', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.ie9.css', destTarget: '?.min.ie9.css', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.bemtree.js', destTarget: '?.min.bemtree.js', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.node.js', destTarget: '?.min.node.js', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.js', destTarget: '?.min.js', freeze: true, minify: isProd }],
-            [borschikTech, { sourceTarget: '?.bemhtml.js', destTarget: '?.min.bemhtml.js', freeze: true, minify: isProd }]
+            [borschikTech, { source: '?.css', target: '?.min.css', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.ie.css', target: '?.min.ie.css', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.ie8.css', target: '?.min.ie8.css', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.ie9.css', target: '?.min.ie9.css', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.bemtree.js', target: '?.min.bemtree.js', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.node.js', target: '?.min.node.js', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.js', target: '?.min.js', freeze: true, minify: isProd }],
+            [borschikTech, { source: '?.bemhtml.js', target: '?.min.bemhtml.js', freeze: true, minify: isProd }]
         ]);
 
         nodeConfig.addTargets([
@@ -98,7 +98,7 @@ module.exports = function (config) {
             '?.html'
         ]);
     });
-    
+
     config.nodes('*desktop.bundles/*', function (nodeConfig) {
         nodeConfig.addTechs([
             // essential
