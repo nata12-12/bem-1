@@ -12,45 +12,44 @@ module.exports = function (config) {
             [enbBemTechs.deps],
             [enbBemTechs.bemjsonToBemdecl],
             // ie.css
-            [require('enb/techs/css'), {
+            [require('enb-stylus/techs/stylus'), {
                 target: '?.ie.css',
-                sourceSuffixes: ['css', 'ie.css']
+                sourceSuffixes: ['styl', 'ie.styl', 'css', 'ie.css'],
+                autoprefixer: {
+                    browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
+                }
             }],
             // ie8.css
-            [require('enb/techs/css'), {
+            [require('enb-stylus/techs/stylus'), {
                 target: '?.ie8.css',
-                sourceSuffixes: ['css', 'ie8.css']
+                sourceSuffixes: ['styl', 'ie8.styl', 'css', 'ie8.css'],
+                autoprefixer: {
+                    browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
+                }
             }],
             // ie9.css
-            [require('enb/techs/css'), {
+            [require('enb-stylus/techs/stylus'), {
                 target: '?.ie9.css',
-                sourceSuffixes: ['css', 'ie9.css']
+                sourceSuffixes: ['styl', 'ie9.styl', 'css', 'ie9.css'],
+                autoprefixer: {
+                    browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
+                }
             }],
             // bemtree
             [require('enb-bemxjst/techs/bemtree'), {
-                devMode: process.env.BEMTREE_ENV === 'development',
-                compact: true
+                sourceSuffixes: ['bemtree', 'bemtree.js']
             }],
             // node.js
-            [require('enb-diverse-js/techs/node-js'), { target: '?.pre.node.js' }],
-            [require('enb-modules/techs/prepend-modules'), {
-                source: '?.pre.node.js',
-                target: '?.node.js'
-            }],
+            [require('enb-js/techs/node-js'), { includeYM: true }],
             // browser.js
-            [require('enb-diverse-js/techs/browser-js'), { target: '?.browser.js' }],
+            [require('enb-js/techs/browser-js'), { includeYM: true }],
             [require('enb/techs/file-merge'), {
-                target: '?.pre.js',
-                sources: ['?.browser.bemhtml.js', '?.browser.js']
-            }],
-            [require('enb-modules/techs/prepend-modules'), {
-                source: '?.pre.js',
-                target: '?.js'
+                target: '?.js',
+                sources: ['?.browser.js', '?.browser.bemhtml.js']
             }],
             // bemhtml
             [require('enb-bemxjst/techs/bemhtml'), {
-                devMode: process.env.BEMHTML_ENV === 'development',
-                compact: true
+                sourceSuffixes: ['bemhtml', 'bemhtml.js']
             }],
             // client bemhtml
             [enbBemTechs.depsByTechToBemdecl, {
@@ -70,8 +69,7 @@ module.exports = function (config) {
             [require('enb-bemxjst/techs/bemhtml'), {
                 target: '?.browser.bemhtml.js',
                 filesTarget: '?.bemhtml.files',
-                devMode: process.env.BEMHTML_ENV === 'development',
-                compact: true
+                sourceSuffixes: ['bemhtml', 'bemhtml.js']
             }],
             // html
             [require('enb-bemxjst/techs/bemjson-to-html')],

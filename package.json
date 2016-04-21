@@ -10,17 +10,18 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
   "devDependencies": {
-    "bower": "^1.5.3",
-    "enb": "^0.17.2",
-    "enb-bem-techs": "^2.0.1",
-    "enb-borschik": "^2.0.0",
-    "borschik-tech-cleancss": "^2.0.1",
-    "enb-bemxjst": "^2.0.2",
-    "enb-diverse-js": "^0.1.0",
-    "enb-modules": "^0.2.0",
-    "enb-stylus": "^2.0.0",
-    "bem": "^0.10.1"
+    "bem": "^0.10.2",
+    "borschik-tech-cleancss": "^2.1.0",
+    "enb": "^1.1.2",
+    "enb-bem-techs": "^2.2.1",
+    "enb-bemxjst": "^6.4.0",
+    "enb-borschik": "^2.4.0",
+    "enb-js": "^1.1.0",
+    "enb-stylus": "^2.2.0"
   },
   "scripts": {
     "start": "enb server",
